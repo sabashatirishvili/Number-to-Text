@@ -6,6 +6,6 @@ const button = document.querySelector('#btn');
 
 
 button.addEventListener("click", function() {
-	nameDisplay.textContent = receiverInput.textContent;
-	receivedDisplay.textContent = amountInput.textContent;
+	nameDisplay.textContent = receiverInput.value;
+	receivedDisplay.textContent = amountInput.value;
 })
