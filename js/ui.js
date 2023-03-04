@@ -1,3 +1,4 @@
+
 const receiverInput = document.querySelector('#receiver');
 const amountInput = document.querySelector('#amount');
 const receivedDisplay = document.querySelector('#received')
