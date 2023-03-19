@@ -1,0 +1,24 @@
+{
+  "name": "number-to-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabashatirishvili/Number-to-Text.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabashatirishvili/Number-to-Text/issues"
+  },
+  "homepage": "https://github.com/sabashatirishvili/Number-to-Text#readme",
+  "dependencies": {
+    "global": "^4.4.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0"
+  }
+}
