@@ -3,6 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const browserSync = require('browser-sync').create();
 
 function styles() {
 	return src('./src/styles/**/*.css')
@@ -17,11 +18,23 @@ function scripts() {
 		.pipe(dest('./dest/js'))
 }
 
-function watchTask() {
-	watch(
-		['./src/styles/**/*.css', './src/js/**/*.js'],
-		series(styles, scripts)
-	)
+function browserSyncServe(cb) {
+	browserSync.init({
+		server:{
+			baseDir:"./"
+		}
+	});
+	cb();
 }
 
-exports.default = series(styles, scripts, watchTask);
+function browserSyncReload(cb) {
+	browserSync.reload();
+	cb();
+}
+
+function watchTask() {
+		watch('*.html', browserSyncReload);
+  	watch(['./src/styles/**/*.css', './src/js/**/*.js'], series(styles, scripts, browserSyncReload));
+}
+
+exports.default = series(styles, scripts, browserSyncServe, watchTask);
