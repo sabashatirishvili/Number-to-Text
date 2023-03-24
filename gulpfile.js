@@ -9,6 +9,9 @@ function styles() {
 	return src('./src/styles/**/*.css')
 		.pipe(autoprefixer("last 2 versions"))
 		.pipe(cleancss())
+		.pipe(autoprefixer({
+			cascade: false
+		}))
 		.pipe(dest('./dest/styles'))
 }
 
